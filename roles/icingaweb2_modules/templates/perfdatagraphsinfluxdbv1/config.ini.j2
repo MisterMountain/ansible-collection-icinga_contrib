@@ -1,0 +1,19 @@
+[influx]
+{% if _perfdatagraphsinfluxdbv1.api_url is defined %}
+api_url = "{{ _perfdatagraphsinfluxdbv1.api_url }}"
+{% endif %}
+{% if _perfdatagraphsinfluxdbv1.api_database is defined %}
+api_database = "{{ _perfdatagraphsinfluxdbv1.api_database }}"
+{% endif %}
+{% if _perfdatagraphsinfluxdbv1.api_username is defined %}
+api_username = "{{ _perfdatagraphsinfluxdbv1.api_username }}"
+{% endif %}
+{% if _perfdatagraphsinfluxdbv1.api_password is defined %}
+api_password = "{{ _perfdatagraphsinfluxdbv1.api_password }}"
+{% endif %}
+{% if _perfdatagraphsinfluxdbv1.api_timeout is defined %}
+api_timeout = "{{ _perfdatagraphsinfluxdbv1.api_timeout }}"
+{% endif %}
+{% if _perfdatagraphsinfluxdbv1.api_tls_insecure is defined %}
+api_tls_insecure = "{{ _perfdatagraphsinfluxdbv1.api_tls_insecure }}"
+{% endif %}

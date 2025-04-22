@@ -1,0 +1,22 @@
+[graphite]
+{% if _perfdatagraphsgraphite.api_url is defined %}
+api_url = "{{ _perfdatagraphsgraphite.api_url }}"
+{% endif %}
+{% if _perfdatagraphsgraphite.writer_host_name_template is defined %}
+writer_host_name_template = "{{ _perfdatagraphsgraphite.writer_host_name_template }}"
+{% endif %}
+{% if _perfdatagraphsgraphite.writer_service_name_template is defined %}
+writer_service_name_template = "{{ _perfdatagraphsgraphite.writer_service_name_template }}"
+{% endif %}
+{% if _perfdatagraphsgraphite.api_user is defined %}
+api_user = "{{ _perfdatagraphsgraphite.api_user }}"
+{% endif %}
+{% if _perfdatagraphsgraphite.api_token is defined %}
+api_token = "{{ _perfdatagraphsgraphite.api_token }}"
+{% endif %}
+{% if _perfdatagraphsgraphite.api_timeout is defined %}
+api_timeout = "{{ _perfdatagraphsgraphite.api_timeout }}"
+{% endif %}
+{% if _perfdatagraphsgraphite.api_tls_insecure is defined %}
+api_tls_insecure = "{{ _perfdatagraphsgraphite.api_tls_insecure }}"
+{% endif %}

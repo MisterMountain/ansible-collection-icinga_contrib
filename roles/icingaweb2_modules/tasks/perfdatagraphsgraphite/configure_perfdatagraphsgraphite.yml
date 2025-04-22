@@ -1,0 +1,12 @@
+---
+
+- name: Deploy config.ini
+  become: true
+  vars:
+    _perfdatagraphsgraphite: "{{ _module.config.perfdatagraphsgraphite | default(omit) }}"
+  ansible.builtin.template:
+    src: "{{ role_path }}/templates/perfdatagraphsgraphite/config.ini.j2"
+    dest: "{{ icingaweb2_modules_config_path }}/modules/perfdatagraphsgraphite/config.ini"
+    owner: "{{ _icingaweb2_modules_web2_user }}"
+    group: "{{ _icingaweb2_modules_web2_group }}"
+    mode: "0660"
