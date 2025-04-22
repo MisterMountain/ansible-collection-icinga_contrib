@@ -18,10 +18,16 @@ Table of contents:
   * [Grafana](#grafana)
   * [Map](#map)
   * [Map Datatype](#map-datatype)
+  * [perfdatagraphs] (#perfdatagraphs)
+  * [perfdatagraphsgraphite] (#perfdatagraphsgraphite)
+  * [perfdatagraphsinfluxdbv1] (#perfdatagraphsinfluxdbv1)
+  * [perfdatagraphsinfluxdbv2] (#perfdatagraphsinfluxdbv2)
+
 * [Example Playbooks](#example-playbooks)
   * [Grafana Playbooks](#grafana-playbooks)
   * [Map Playbooks](#map-playbooks)
   * [Map Datatype Playbooks](#map-datatype-playbooks)
+  * [perfdatagraphs with Backend Playbooks](#perfdatagraphs-playbooks)
 
 # Variables
 
@@ -83,10 +89,10 @@ Table of contents:
     `config.graphs` **takes precedence** over the \*.ini files when redefining the same section.  
     Default: `false`
   - `config.grafana`: `dictionary`  
-    Manages *config.ini* to configure the module. Its keys are equal to the modules [configuration file](https://github.com/Mikesch-mp/icingaweb2-module-grafana/blob/master/doc/03-module-configuration.md#example-configini-etcicingaweb2modulesgrafanaconfigini), though not necessarily complete yet.  
+    Manages *config.ini* to configure the module. Its keys are equal to the modules [configuration file](https://github.com/netwaays/icingaweb2-module-grafana/blob/master/doc/03-module-configuration.md#example-configini-etcicingaweb2modulesgrafanaconfigini), though not necessarily complete yet.  
     For possible default values have look at [templates/grafana/config.ini.j2](templates/grafana/config.ini.j2).
   - `config.graphs`  
-    Manages *graphs.ini* to configure the module. Its keys are equal to the modules [graphs file](https://github.com/Mikesch-mp/icingaweb2-module-grafana/blob/master/doc/04-graph-configuration.md#options), though not necessarily complete yet.  
+    Manages *graphs.ini* to configure the module. Its keys are equal to the modules [graphs file](https://github.com/netways/icingaweb2-module-grafana/blob/master/doc/04-graph-configuration.md#options), though not necessarily complete yet.  
     Here you can set specialized dashboards for specific Icinga Services or CheckCommands.  
     For possible default values have look at [templates/grafana/graphs.ini.j2](templates/grafana/graphs.ini.j2).
 - `icingaweb2_modules_grafana_server_config_path`: `string`  
@@ -110,6 +116,34 @@ Table of contents:
 
 - `icingaweb2_modules.mapDatatype`: `none`  
   - No keys for this module.
+
+## perfdatagraphs
+
+- `icingaweb2_modules.perfdatagraphs`: `directory`
+  - `config.perfdatagraphs`: `dictionary`  
+    Manages the Section perfdatagraphs within *config.ini* to configure the module. Its keys are equal to the module's [settings](https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs/blob/main/doc/03-Configuration.md).  
+    For possible default values have look at [templates/perfdatagraphs/config.ini.j2](templates/perfdatagraphs/config.ini.j2).
+
+## perfdatagraphsgraphite
+
+- `icingaweb2_modules.perfdatagraphsgraphite`: `directory`
+  - `config.perfdatagraphsgraphite`: `dictionary`  
+    Manages the Section perfdatagraphsgraphite within *config.ini* to configure the module. Its keys are equal to the module's [settings](https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs-graphite/tree/main/doc).  
+    For possible default values have look at [templates/perfdatagraphsgraphite/config.ini.j2](templates/perfdatagraphsgraphite/config.ini.j2).
+
+## perfdatagraphsinfluxdbv1
+
+- `icingaweb2_modules.perfdatagraphsinfluxdbv1`: `directory`
+  - `config.perfdatagraphsinfluxdbv1`: `dictionary`  
+    Manages the Section perfdatagraphsinfluxdbv1 within *config.ini* to configure the module. Its keys are equal to the module's [settings](https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs-influxdbv1/tree/development/doc).  
+    For possible default values have look at [templates/perfdatagraphsinfluxdbv1/config.ini.j2](templates/perfdatagraphsinfluxdbv1/config.ini.j2).
+
+## perfdatagraphsinfluxdbv2
+
+- `icingaweb2_modules.perfdatagraphsinfluxdbv2`: `directory`
+  - `config.perfdatagraphsinfluxdbv2`: `dictionary`  
+    Manages the Section perfdatagraphsinfluxdbv2 within *config.ini* to configure the module. Its keys are equal to the module's [settings](https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs-influxdbv2/tree/main/doc).  
+    For possible default values have look at [templates/perfdatagraphsinfluxdbv2/config.ini.j2](templates/perfdatagraphsinfluxdbv2/config.ini.j2).
 
 # Example Playbooks
 
@@ -158,7 +192,7 @@ Install grafana module via Git and configure connection to Grafana server. Also 
         # Avoid removing Grafana as in "the Grafana server"
         package_name: "icinga-grafana"
         source: git
-        url: "https://github.com/Mikesch-mp/icingaweb2-module-grafana.git"
+        url: "https://github.com/netways/icingaweb2-module-grafana.git"
         version: "v2.0.2"
         enabled: true
         data_source: "influxdb_icinga"
@@ -188,7 +222,7 @@ Install grafana module via Git and configure connection to Grafana server. Also 
         # Avoid removing Grafana as in "the Grafana server"
         package_name: "icinga-grafana"
         source: git
-        url: "https://github.com/Mikesch-mp/icingaweb2-module-grafana.git"
+        url: "https://github.com/netways/icingaweb2-module-grafana.git"
         version: "v2.0.2"
         enabled: true
         data_source: "influxdb_icinga"
@@ -239,4 +273,40 @@ Install the mapDatatype module via Git.
         package_name: "icinga-mapdatatype"
         source: git
         url: "https://github.com/nbuchwitz/icingaweb2-module-mapDatatype.git"
+```
+
+## perfdatagraphs with Backend Playbooks
+
+Install the perfdatagraphs module via Git.
+
+```yaml
+- name: Manage perfdatagraphs module
+  hosts:
+    - icingaweb2
+
+  vars:
+    icingaweb2_modules:
+      perfdatagraphs:
+        package_name: "icinga-perfdatagraphs"
+        source: git
+        url: "https://github.com/netways/icingaweb2-module-perfdatagraphs"
+        enabled: true
+        config:
+          perfdatagraphs:
+            default_backend: InfluxDBv2
+      perfdatagraphsinfluxdbv2:
+        package_name: "icinga-perfdatagraphs-influxdbv2"
+        source: git
+        url: "https://github.com/netways/icingaweb2-module-perfdatagraphs"
+        enabled: true
+        config:
+          perfdatagraphsinfluxdbv2:
+            api_url: "localhost:8086"
+            api_org: "monitoring"
+            api_bucket: "icinga2"
+            api_token: "glsa_VBTDQJ998i6fHPxeeYrvFrKBXfjHjaGx"
+            api_timeout: "0"
+            api_tls_insecure: "1"
+  roles:
+    - netways.icinga_contrib.icingaweb2_modules
 ```

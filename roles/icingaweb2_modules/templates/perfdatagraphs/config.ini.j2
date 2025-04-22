@@ -1,5 +1,7 @@
 [perfdatagraphs]
-default_timerange = "PT12H"
+{% if _perfdatagraphs.default_timerange is defined %}
+default_timerange = "{{ _perfdatagraphs.default_timerange }}"
+{% endif %}
 {% if _perfdatagraphs.default_backend is defined %}
 default_backend = "{{ _perfdatagraphs.default_backend }}"
 {% endif %}
