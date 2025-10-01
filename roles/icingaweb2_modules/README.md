@@ -297,7 +297,7 @@ Install the perfdatagraphs module via Git.
       perfdatagraphsinfluxdbv2:
         package_name: "icinga-perfdatagraphs-influxdbv2"
         source: git
-        url: "https://github.com/netways/icingaweb2-module-perfdatagraphs"
+        url: "https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs"
         enabled: true
         config:
           perfdatagraphsinfluxdbv2:
