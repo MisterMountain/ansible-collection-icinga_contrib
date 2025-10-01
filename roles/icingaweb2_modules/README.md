@@ -289,7 +289,7 @@ Install the perfdatagraphs module via Git.
       perfdatagraphs:
         package_name: "icinga-perfdatagraphs"
         source: git
-        url: "https://github.com/netways/icingaweb2-module-perfdatagraphs"
+        url: "https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs"
         enabled: true
         config:
           perfdatagraphs:
