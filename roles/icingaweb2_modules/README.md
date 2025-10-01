@@ -92,7 +92,7 @@ Table of contents:
     Manages *config.ini* to configure the module. Its keys are equal to the modules [configuration file](https://github.com/NETWAYS/icingaweb2-module-grafana/blob/main/doc/03-module-configuration.md#available-options), though not necessarily complete yet.  
     For possible default values have look at [templates/grafana/config.ini.j2](templates/grafana/config.ini.j2).
   - `config.graphs`  
-    Manages *graphs.ini* to configure the module. Its keys are equal to the modules [graphs file](https://github.com/netways/icingaweb2-module-grafana/blob/master/doc/04-graph-configuration.md#options), though not necessarily complete yet.  
+    Manages *graphs.ini* to configure the module. Its keys are equal to the modules [graphs file](https://github.com/NETWAYS/icingaweb2-module-grafana/blob/master/doc/04-graph-configuration.md#options), though not necessarily complete yet.  
     Here you can set specialized dashboards for specific Icinga Services or CheckCommands.  
     For possible default values have look at [templates/grafana/graphs.ini.j2](templates/grafana/graphs.ini.j2).
 - `icingaweb2_modules_grafana_server_config_path`: `string`  
