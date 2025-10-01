@@ -222,7 +222,7 @@ Install grafana module via Git and configure connection to Grafana server. Also 
         # Avoid removing Grafana as in "the Grafana server"
         package_name: "icinga-grafana"
         source: git
-        url: "https://github.com/netways/icingaweb2-module-grafana.git"
+        url: "https://github.com/NETWAYS/icingaweb2-module-grafana.git"
         version: "v2.0.2"
         enabled: true
         data_source: "influxdb_icinga"
