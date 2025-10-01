@@ -121,7 +121,7 @@ Table of contents:
 
 - `icingaweb2_modules.perfdatagraphs`: `directory`
   - `config.perfdatagraphs`: `dictionary`  
-    Manages the Section perfdatagraphs within *config.ini* to configure the module. Its keys are equal to the module's [settings](https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs/blob/main/doc/03-Configuration.md).  
+    Manages the section perfdatagraphs within *config.ini* to configure the module. Its keys are equal to the module's [settings](https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs/blob/main/doc/03-Configuration.md).  
     For possible default values have look at [templates/perfdatagraphs/config.ini.j2](templates/perfdatagraphs/config.ini.j2).
 
 ## perfdatagraphsgraphite
