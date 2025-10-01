@@ -142,7 +142,7 @@ Table of contents:
 
 - `icingaweb2_modules.perfdatagraphsinfluxdbv2`: `directory`
   - `config.perfdatagraphsinfluxdbv2`: `dictionary`  
-    Manages the Section perfdatagraphsinfluxdbv2 within *config.ini* to configure the module. Its keys are equal to the module's [settings](https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs-influxdbv2/tree/main/doc).  
+    Manages the section perfdatagraphsinfluxdbv2 within *config.ini* to configure the module. Its keys are equal to the module's [settings](https://github.com/NETWAYS/icingaweb2-module-perfdatagraphs-influxdbv2/tree/main/doc).  
     For possible default values have look at [templates/perfdatagraphsinfluxdbv2/config.ini.j2](templates/perfdatagraphsinfluxdbv2/config.ini.j2).
 
 # Example Playbooks
